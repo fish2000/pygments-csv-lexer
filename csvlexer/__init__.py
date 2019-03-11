@@ -1,4 +1,4 @@
-from .csv import CsvLexer
+from . import csv
 
-__all__ = ('CsvLexer',)
+__all__ = ('csv', 'csv.CsvLexer')
 __dir__ = lambda: list(__all__)
