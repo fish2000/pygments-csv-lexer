@@ -1,5 +1,8 @@
-![CSV lexer demonstration](https://i.imgur.com/kAfT7so.png)
+CSV Lexer for Pygments
+===================
 
-CSV [**custom lexer**](http://pygments.org/docs/lexerdevelopment/) for [**pygments**](http://pygments.org/).
+![CSV lexer demonstration](https://imgur.com/g8TtkgW.png)
 
-Code based on [**Adobe answer**](https://stackoverflow.com/a/25508711/5951529).
+A simple, custom [CSV lexer](http://pygments.org/docs/lexerdevelopment/) for the [Pygments syntax highlighter](http://pygments.org/).
+
+The code is originally based on [this StackOverflow answer](https://stackoverflow.com/a/25508711/298171). The project, in its current incarnation, is a fork of [this repo here](https://github.com/Kristinita/PygmentsCSVLexer).
