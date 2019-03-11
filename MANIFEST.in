@@ -1,0 +1,13 @@
+exclude *.pyc *~ *.so .DS_Store
+recursive-include requirements *.txt
+include .bumpversion.cfg
+include .editorconfig
+include .gitignore
+include CODE_OF_CONDUCT.md
+include LICENSE.txt
+include Makefile
+include README.md
+include setup.py
+recursive-include csvlexer *
+recursive-exclude requirements *.pyc *~ *.so .DS_Store
+recursive-exclude csvlexer *.pyc *~ *.so .DS_Store

@@ -1,0 +1,5 @@
+-r install.txt
+bumpversion
+check-manifest
+setuptools
+twine
