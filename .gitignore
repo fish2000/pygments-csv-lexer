@@ -61,3 +61,4 @@ target/
 .envrc
 .env
 .direnvrc
+.pypirc
