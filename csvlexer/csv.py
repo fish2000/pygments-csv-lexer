@@ -41,28 +41,31 @@ class CsvLexer(RegexLexer):
             (r'^[^,\n]*',       Operator,                                       'second'),
         ],
         'second': [
-            (r'(,)([^,\n]*)',   bygroups(Punctuation, Literal.Number),          'third'),
+            (r'(,)([^,\n]*)',   bygroups(Punctuation, Name.Constant),           'third'),
         ],
         'third': [
-            (r'(,)([^,\n]*)',   bygroups(Punctuation, Keyword),                 'fourth'),
+            (r'(,)([^,\n]*)',   bygroups(Punctuation, Keyword.Declaration),     'fourth'),
         ],
         'fourth': [
-            (r'(,)([^,\n]*)',   bygroups(Punctuation, Name.Constant),           'fifth'),
+            (r'(,)([^,\n]*)',   bygroups(Punctuation, Literal.Number),          'fifth'),
         ],
         'fifth': [
             (r'(,)([^,\n]*)',   bygroups(Punctuation, Literal.String.Single),   'sixth'),
         ],
         'sixth': [
-            (r'(,)([^,\n]*)',   bygroups(Punctuation, Literal.Number),          'seventh'),
+            (r'(,)([^,\n]*)',   bygroups(Punctuation, Name.Constant),           'seventh'),
         ],
         'seventh': [
-            (r'(,)([^,\n]*)',   bygroups(Punctuation, Keyword),                 'eighth'),
+            (r'(,)([^,\n]*)',   bygroups(Punctuation, Keyword.Namespace),       'eighth'),
         ],
         'eighth': [
-            (r'(,)([^,\n]*)',   bygroups(Punctuation, Name.Constant),           'ninth'),
+            (r'(,)([^,\n]*)',   bygroups(Punctuation, Literal.Number),          'ninth'),
         ],
         'ninth': [
-            (r'(,)([^,\n]*)',   bygroups(Punctuation, Literal.String.Single),   'unsupported'),
+            (r'(,)([^,\n]*)',   bygroups(Punctuation, Literal.String.Single),   'tenth'),
+        ],
+        'tenth': [
+            (r'(,)([^,\n]*)',   bygroups(Punctuation, Keyword.Type),            'unsupported'),
         ],
         'unsupported': [
             (r'(.+)',           bygroups(Punctuation)),
