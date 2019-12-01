@@ -73,7 +73,7 @@ def project_content(filename):
     if not os.path.isfile(filepath):
         raise IOError("""File %s doesn't exist""" % filepath)
     out = ''
-    with io.open(filepath, 'r') as handle:
+    with io.open(filepath, 'r', encoding='utf-8') as handle:
         out += handle.read()
     if not out:
         raise ValueError("""File %s couldn't be read""" % filename)
