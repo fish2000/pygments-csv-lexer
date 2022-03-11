@@ -36,36 +36,38 @@ class CsvLexer(RegexLexer):
     aliases =   ['csv', 'comma-separated', 'comma-separated-values']
     filenames = ['*.csv']
     
+    csv_variable = r'(,)([^,\n]*)'
+
     tokens = {
         'root': [
             (r'^[^,\n]*',       Operator,                                       'second'),
         ],
         'second': [
-            (r'(,)([^,\n]*)',   bygroups(Punctuation, Name.Constant),           'third'),
+            (csv_variable,      bygroups(Punctuation, Name.Constant),           'third'),
         ],
         'third': [
-            (r'(,)([^,\n]*)',   bygroups(Punctuation, Keyword.Declaration),     'fourth'),
+            (csv_variable,      bygroups(Punctuation, Keyword.Declaration),     'fourth'),
         ],
         'fourth': [
-            (r'(,)([^,\n]*)',   bygroups(Punctuation, Literal.Number),          'fifth'),
+            (csv_variable,      bygroups(Punctuation, Literal.Number),          'fifth'),
         ],
         'fifth': [
-            (r'(,)([^,\n]*)',   bygroups(Punctuation, Literal.String.Single),   'sixth'),
+            (csv_variable,      bygroups(Punctuation, Literal.String.Single),   'sixth'),
         ],
         'sixth': [
-            (r'(,)([^,\n]*)',   bygroups(Punctuation, Name.Constant),           'seventh'),
+            (csv_variable,      bygroups(Punctuation, Name.Constant),           'seventh'),
         ],
         'seventh': [
-            (r'(,)([^,\n]*)',   bygroups(Punctuation, Keyword.Namespace),       'eighth'),
+            (csv_variable,      bygroups(Punctuation, Keyword.Namespace),       'eighth'),
         ],
         'eighth': [
-            (r'(,)([^,\n]*)',   bygroups(Punctuation, Literal.Number),          'ninth'),
+            (csv_variable,      bygroups(Punctuation, Literal.Number),          'ninth'),
         ],
         'ninth': [
-            (r'(,)([^,\n]*)',   bygroups(Punctuation, Literal.String.Single),   'tenth'),
+            (csv_variable,      bygroups(Punctuation, Literal.String.Single),   'tenth'),
         ],
         'tenth': [
-            (r'(,)([^,\n]*)',   bygroups(Punctuation, Keyword.Type),            'unsupported'),
+            (csv_variable,      bygroups(Punctuation, Keyword.Type),            'unsupported'),
         ],
         'unsupported': [
             (r'(.+)',           bygroups(Punctuation)),
